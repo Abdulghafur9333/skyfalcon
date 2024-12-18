@@ -393,6 +393,8 @@ body.active { overflow: hidden; }
   position: absolute;
   inset: 0;
   background-image: url('../images/hero-bg.jpg');
+  max-width: 100%; /* Ensures the logo doesn't overflow its container */
+  height: auto;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
