@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E6F7FF; /* Sky Blue background */
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #006633; /* Dark Green for header */
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+
+        /* Gallery grid styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 3px solid #006633; /* Green border */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-color: #004422; /* Darker Green on hover */
+        }
+
+        /* Lightbox overlay styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 102, 51, 0.8); /* Semi-transparent green overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 3px solid #FFD700; /* Gold Border */
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #FFD700; /* Gold Close button */
+            font-size: 2em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .lightbox-close:hover {
+            color: #FF4500; /* Bright contrast on hover */
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #006633; /* Dark Green */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Back to Home Button */
+        .back-to-home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #00CC66; /* Green background */
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+
+        .back-to-home:hover {
+            background-color: #009944; /* Darker green on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .gallery img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Our Gallery</h1>
+    <p>Celebrating the Beauty of Flight</p>
+     <a href="index.html" class="back-to-home">Back to Home</a> <!-- Back to home link -->
+</header>
+
+<div class="gallery">
+    <!-- Dynamically generated image grid with lightbox links -->
+    <!-- Total of 61 images -->
+    <a href="#img1"><img src="./assets/images/image_1.jpg" alt="Gallery Image 1"></a>
+    <a href="#img2"><img src="./assets/images/image_2.jpg" alt="Gallery Image 2"></a>
+    <a href="#img3"><img src="./assets/images/image_3.jpg" alt="Gallery Image 3"></a>
+    <a href="#img4"><img src="./assets/images/image_4.jpg" alt="Gallery Image 4"></a>
+    <a href="#img5"><img src="./assets/images/image_5.jpg" alt="Gallery Image 5"></a>
+    <a href="#img6"><img src="./assets/images/image_6.jpg" alt="Gallery Image 6"></a>
+    <a href="#img7"><img src="./assets/images/image_7.jpg" alt="Gallery Image 7"></a>
+    <a href="#img9"><img src="./assets/images/image_9.jpg" alt="Gallery Image 9"></a>
+    <a href="#img10"><img src="./assets/images/image_10.jpg" alt="Gallery Image 10"></a>
+    <a href="#img11"><img src="./assets/images/image_11.jpg" alt="Gallery Image 11"></a>
+    <a href="#img12"><img src="./assets/images/image_12.jpg" alt="Gallery Image 12"></a>
+    <a href="#img14"><img src="./assets/images/image_14.jpg" alt="Gallery Image 14"></a>
+    <a href="#img15"><img src="./assets/images/image_15.jpg" alt="Gallery Image 15"></a>
+    <a href="#img16"><img src="./assets/images/image_16.jpg" alt="Gallery Image 16"></a>
+    <a href="#img17"><img src="./assets/images/image_17.jpg" alt="Gallery Image 17"></a>
+    <a href="#img18"><img src="./assets/images/image_18.jpg" alt="Gallery Image 18"></a>
+    <a href="#img19"><img src="./assets/images/image_19.jpg" alt="Gallery Image 19"></a>
+    <a href="#img20"><img src="./assets/images/image_20.jpg" alt="Gallery Image 20"></a>
+    <a href="#img22"><img src="./assets/images/image_22.jpg" alt="Gallery Image 22"></a>
+    <a href="#img23"><img src="./assets/images/image_23.jpg" alt="Gallery Image 23"></a>
+    <a href="#img24"><img src="./assets/images/image_24.jpg" alt="Gallery Image 24"></a>
+    <a href="#img25"><img src="./assets/images/image_25.jpg" alt="Gallery Image 25"></a>
+    <a href="#img26"><img src="./assets/images/image_26.jpg" alt="Gallery Image 26"></a>
+    <a href="#img27"><img src="./assets/images/image_27.jpg" alt="Gallery Image 27"></a>
+    <a href="#img28"><img src="./assets/images/image_28.jpg" alt="Gallery Image 28"></a>
+    <a href="#img29"><img src="./assets/images/image_29.jpg" alt="Gallery Image 29"></a>
+    <a href="#img30"><img src="./assets/images/image_30.jpg" alt="Gallery Image 30"></a>
+    <a href="#img32"><img src="./assets/images/image_32.jpg" alt="Gallery Image 32"></a>
+    <a href="#img33"><img src="./assets/images/image_33.jpg" alt="Gallery Image 33"></a>
+    <a href="#img34"><img src="./assets/images/image_34.jpg" alt="Gallery Image 34"></a>
+    <a href="#img35"><img src="./assets/images/image_35.jpg" alt="Gallery Image 35"></a>
+    <a href="#img36"><img src="./assets/images/image_36.jpg" alt="Gallery Image 36"></a>
+    <a href="#img37"><img src="./assets/images/image_37.jpg" alt="Gallery Image 37"></a>
+    <a href="#img38"><img src="./assets/images/image_38.jpg" alt="Gallery Image 38"></a>
+    <a href="#img39"><img src="./assets/images/image_39.jpg" alt="Gallery Image 39"></a>
+    <a href="#img40"><img src="./assets/images/image_40.jpg" alt="Gallery Image 40"></a>
+    <a href="#img41"><img src="./assets/images/image_41.jpg" alt="Gallery Image 41"></a>
+    <a href="#img42"><img src="./assets/images/image_42.jpg" alt="Gallery Image 42"></a>
+    <a href="#img43"><img src="./assets/images/image_43.jpg" alt="Gallery Image 43"></a>
+    <a href="#img45"><img src="./assets/images/image_45.jpg" alt="Gallery Image 45"></a>
+    <a href="#img46"><img src="./assets/images/image_46.jpg" alt="Gallery Image 46"></a>
+    <a href="#img48"><img src="./assets/images/image_48.jpg" alt="Gallery Image 48"></a>
+    <a href="#img49"><img src="./assets/images/image_49.jpg" alt="Gallery Image 49"></a>
+    <a href="#img50"><img src="./assets/images/image_50.jpg" alt="Gallery Image 50"></a>
+    <a href="#img51"><img src="./assets/images/image_51.jpg" alt="Gallery Image 51"></a>
+    <a href="#img52"><img src="./assets/images/image_52.jpg" alt="Gallery Image 52"></a>
+    <a href="#img53"><img src="./assets/images/image_53.jpg" alt="Gallery Image 53"></a>
+    <a href="#img54"><img src="./assets/images/image_54.jpg" alt="Gallery Image 54"></a>
+    <a href="#img55"><img src="./assets/images/image_55.jpg" alt="Gallery Image 55"></a>
+    <a href="#img57"><img src="./assets/images/image_57.jpg" alt="Gallery Image 57"></a>
+    <a href="#img58"><img src="./assets/images/image_58.jpg" alt="Gallery Image 58"></a>
+    <a href="#img59"><img src="./assets/images/image_59.jpg" alt="Gallery Image 59"></a>
+    <a href="#img60"><img src="./assets/images/image_60.jpg" alt="Gallery Image 60"></a>
+    <a href="#img61"><img src="./assets/images/image_61.jpg" alt="Gallery Image 61"></a>
+</div>
+
+<!-- Lightbox for Each Image -->
+<div id="img1" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_1.jpg" alt="Gallery Image 1">
+</div>
+<div id="img2" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_2.jpg" alt="Gallery Image 2">
+</div>
+<div id="img3" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_3.jpg" alt="Gallery Image 3">
+</div>
+<div id="img4" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_4.jpg" alt="Gallery Image 4">
+</div>
+<div id="img5" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_5.jpg" alt="Gallery Image 5">
+</div>
+<div id="img6" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_6.jpg" alt="Gallery Image 6">
+</div>
+<div id="img7" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_7.jpg" alt="Gallery Image 7">
+</div>
+<div id="img8" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_8.jpg" alt="Gallery Image 8">
+</div>
+<div id="img9" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_9.jpg" alt="Gallery Image 9">
+</div>
+<div id="img10" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_10.jpg" alt="Gallery Image 10">
+</div>
+<div id="img11" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_11.jpg" alt="Gallery Image 11">
+</div>
+<div id="img12" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_12.jpg" alt="Gallery Image 12">
+</div>
+<div id="img13" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_13.jpg" alt="Gallery Image 13">
+</div>
+<div id="img14" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_14.jpg" alt="Gallery Image 14">
+</div>
+<div id="img15" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_15.jpg" alt="Gallery Image 15">
+</div>
+<div id="img16" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_16.jpg" alt="Gallery Image 16">
+</div>
+<div id="img17" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_17.jpg" alt="Gallery Image 17">
+</div>
+<div id="img18" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_18.jpg" alt="Gallery Image 18">
+</div>
+<div id="img19" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_19.jpg" alt="Gallery Image 19">
+</div>
+<div id="img20" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_20.jpg" alt="Gallery Image 20">
+</div>
+<div id="img21" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_21.jpg" alt="Gallery Image 21">
+</div>
+<div id="img22" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_22.jpg" alt="Gallery Image 22">
+</div>
+<div id="img23" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_23.jpg" alt="Gallery Image 23">
+</div>
+<div id="img24" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_24.jpg" alt="Gallery Image 24">
+</div>
+<div id="img25" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_25.jpg" alt="Gallery Image 25">
+</div>
+<div id="img26" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_26.jpg" alt="Gallery Image 26">
+</div>
+<div id="img27" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_27.jpg" alt="Gallery Image 27">
+</div>
+<div id="img28" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_28.jpg" alt="Gallery Image 28">
+</div>
+<div id="img29" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_29.jpg" alt="Gallery Image 29">
+</div>
+<div id="img30" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_30.jpg" alt="Gallery Image 30">
+</div>
+<div id="img31" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_31.jpg" alt="Gallery Image 31">
+</div>
+<div id="img32" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_32.jpg" alt="Gallery Image 32">
+</div>
+<div id="img33" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_33.jpg" alt="Gallery Image 33">
+</div>
+<div id="img34" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_34.jpg" alt="Gallery Image 34">
+</div>
+<div id="img35" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_35.jpg" alt="Gallery Image 35">
+</div>
+<div id="img36" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_36.jpg" alt="Gallery Image 36">
+</div>
+<div id="img37" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_37.jpg" alt="Gallery Image 37">
+</div>
+<div id="img38" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_38.jpg" alt="Gallery Image 38">
+</div>
+<div id="img39" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_39.jpg" alt="Gallery Image 39">
+</div>
+<div id="img40" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_40.jpg" alt="Gallery Image 40">
+</div>
+<div id="img41" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_41.jpg" alt="Gallery Image 41">
+</div>
+<div id="img42" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_42.jpg" alt="Gallery Image 42">
+</div>
+<div id="img43" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_43.jpg" alt="Gallery Image 43">
+</div>
+<div id="img44" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_44.jpg" alt="Gallery Image 44">
+</div>
+<div id="img45" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_45.jpg" alt="Gallery Image 45">
+</div>
+<div id="img46" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_46.jpg" alt="Gallery Image 46">
+</div>
+<div id="img47" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_47.jpg" alt="Gallery Image 47">
+</div>
+<div id="img48" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_48.jpg" alt="Gallery Image 48">
+</div>
+<div id="img49" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_49.jpg" alt="Gallery Image 49">
+</div>
+<div id="img50" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_50.jpg" alt="Gallery Image 50">
+</div>
+<div id="img51" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_51.jpg" alt="Gallery Image 51">
+</div>
+<div id="img52" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_52.jpg" alt="Gallery Image 52">
+</div>
+<div id="img53" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_53.jpg" alt="Gallery Image 53">
+</div>
+<div id="img54" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_54.jpg" alt="Gallery Image 54">
+</div>
+<div id="img55" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_55.jpg" alt="Gallery Image 55">
+</div>
+<div id="img56" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_56.jpg" alt="Gallery Image 56">
+</div>
+<div id="img57" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_57.jpg" alt="Gallery Image 57">
+</div>
+<div id="img58" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_58.jpg" alt="Gallery Image 58">
+</div>
+<div id="img59" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_59.jpg" alt="Gallery Image 59">
+</div>
+<div id="img60" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_60.jpg" alt="Gallery Image 60">
+</div>
+<div id="img61" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="./assets/images/image_61.jpg" alt="Gallery Image 61">
+</div>
+
+<!-- Add all other lightbox entries from img3 to img61 following the same format -->
+<!-- Note: Just ensure all 61 images have their corresponding lightboxes -->
+
+<footer>
+    <p>&copy; 2024 Sky Falcon  Aviation Agency. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

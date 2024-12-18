@@ -1,0 +1,7 @@
+<svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular Border -->
+  <circle cx="17.5" cy="17.5" r="12" stroke="#A79132" stroke-width="2" fill="none"/>
+
+  <!-- Text Inside the Circle -->
+  <text x="50%" y="50%" font-family="Verdana, sans-serif" font-size="8" fill="#A79132" font-weight="bold" text-anchor="middle" alignment-baseline="central">SFA</text>
+</svg>
